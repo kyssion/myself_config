@@ -1,4 +1,12 @@
 #!/bin/sh
-export MYSELF_CONFIG="$HOME/.myself_config"
-export JAVA_HOME="/opt/jdk21"
-export PATH="$PATH:/opt/go/bin:/opt/node/bin:/opt/jdk/bin:$MYSELF_CONFIG/script"
+case ":${MYSELF_CONFIG}:" in
+    *:"$HOME/.myself_config":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export MYSELF_CONFIG="$HOME/.myself_config"
+        export JAVA_HOME="/opt/jdk21"
+        export GOPATH="/opt/go_path"
+        export PATH="$PATH:/opt/go/bin:/opt/node/bin:/opt/jdk/bin:$MYSELF_CONFIG/script:$GOPATH/bin"
+        ;;
+esac
