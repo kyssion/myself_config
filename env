@@ -7,6 +7,7 @@ case ":${MYSELF_CONFIG}:" in
         export MYSELF_CONFIG="$HOME/.myself_config"
         export JAVA_HOME="/opt/jdk21"
         export GOPATH="/opt/go_path"
-        export PATH="$PATH:/opt/go/bin:/opt/node/bin:/opt/jdk/bin:$MYSELF_CONFIG/script:$GOPATH/bin"
+        export DOTNET_ROOT="/opt/dotnet8"
+        export PATH="$PATH:/opt/go/bin:/opt/node/bin:/opt/jdk/bin:$MYSELF_CONFIG/script:$GOPATH/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools"
         ;;
 esac
