@@ -8,9 +8,12 @@ case ":${MYSELF_CONFIG}:" in
         export JAVA_HOME="/opt/jdk21"
         export GOPATH="/opt/go_path"
         export DOTNET_ROOT="/opt/dotnet8"
-        export PATH="$PATH:/opt/go/bin:/opt/node/bin:$JAVA_HOME/bin:$MYSELF_CONFIG/script:$GOPATH/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+        export NODE_HOME="/opt/node"
+        export PATH="$PATH:/opt/go/bin:/opt/node/bin:$HOME/.myself_config/bin:$NODE_HOME/bin:$JAVA_HOME/bin:$MYSELF_CONFIG/script:$GOPATH/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools"
         ;;
 esac
+
+# bash parameter completion for the dotnet CLI
 
 function _dotnet_bash_complete()
 {
